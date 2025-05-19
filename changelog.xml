@@ -5,7 +5,7 @@
     https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
 
     <changeSet id="1" author="saiteja">
-        <createTable tableName="demo_table">
+        <createTable tableName="demo_table_sai">
             <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
