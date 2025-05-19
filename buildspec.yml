@@ -1,6 +1,16 @@
-changeLogFile: db.changelog.xml
-url: jdbc:postgresql://liquibase-poc-db.cmhc6iiygnwr.us-east-1.rds.amazonaws.com:5432/postgres
-username: admin
-password: saitejaadmin
-driver: org.postgresql.Driver
-classpath: /usr/lib/liquibase/postgresql.jar
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    commands:
+      - echo Installing Liquibase...
+      - curl -LO https://github.com/liquibase/liquibase/releases/download/v4.28.0/liquibase-4.28.0.tar.gz
+      - tar -xvzf liquibase-4.28.0.tar.gz
+      - export PATH=$PATH:$PWD/liquibase
+      - echo "Liquibase installed"
+  build:
+    commands:
+      - echo Running Liquibase migration...
+      - liquibase --defaultsFile=liquibase.properties update
