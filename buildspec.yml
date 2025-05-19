@@ -8,8 +8,9 @@ phases:
       - echo "Downloading Liquibase CLI..."
       - curl -L -o liquibase.tar.gz https://github.com/liquibase/liquibase/releases/download/v4.28.0/liquibase-4.28.0.tar.gz
       - tar -xzf liquibase.tar.gz
+      - mv liquibase-4.28.0 liquibase
       - chmod +x liquibase/liquibase
-      - echo "Downloading PostgreSQL JDBC Driver..."
+      - echo "Downloading PostgreSQL JDBC driver..."
       - curl -L -o postgresql-42.7.2.jar https://jdbc.postgresql.org/download/postgresql-42.7.2.jar
   build:
     commands:
