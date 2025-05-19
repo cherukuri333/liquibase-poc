@@ -5,11 +5,10 @@ phases:
     runtime-versions:
       java: corretto11
     commands:
-      - echo Downloading Liquibase and PostgreSQL JDBC driver...
+      - echo Downloading Liquibase and PostgreSQL driver...
       - curl -L -o liquibase.jar https://github.com/liquibase/liquibase/releases/download/v4.28.0/liquibase-4.28.0.jar
       - curl -L -o postgresql-42.7.2.jar https://jdbc.postgresql.org/download/postgresql-42.7.2.jar
-      - echo "All dependencies downloaded"
   build:
     commands:
       - echo Running Liquibase migration...
-      - java -cp "liquibase.jar:postgresql-42.7.2.jar" liquibase.integration.commandline.Main --defaultsFile=liquibase.properties update
+      - java -jar liquibase.jar --classpath=postgresql-42.7.2.jar --defaultsFile=liquibase.properties update
