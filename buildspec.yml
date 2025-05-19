@@ -8,8 +8,9 @@ phases:
       - echo Installing Liquibase...
       - curl -LO https://github.com/liquibase/liquibase/releases/download/v4.28.0/liquibase-4.28.0.tar.gz
       - tar -xvzf liquibase-4.28.0.tar.gz
-      - export PATH=$PATH:$PWD/liquibase
-      - echo "Liquibase installed"
+      - mv liquibase /opt/liquibase
+      - ln -s /opt/liquibase/liquibase /usr/local/bin/liquibase
+      - echo "Liquibase installed to /usr/local/bin"
   build:
     commands:
       - echo Running Liquibase migration...
