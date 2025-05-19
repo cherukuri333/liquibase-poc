@@ -5,12 +5,13 @@ phases:
     runtime-versions:
       java: corretto11
     commands:
-      - echo Downloading Liquibase and PostgreSQL driver...
-      - curl -L -o liquibase.zip https://github.com/liquibase/liquibase/releases/download/v4.28.0/liquibase-4.28.0.zip
-      - unzip liquibase.zip -d liquibase
+      - echo "Downloading Liquibase CLI..."
+      - curl -L -o liquibase.tar.gz https://github.com/liquibase/liquibase/releases/download/v4.28.0/liquibase-4.28.0.tar.gz
+      - tar -xzf liquibase.tar.gz
+      - chmod +x liquibase/liquibase
+      - echo "Downloading PostgreSQL JDBC Driver..."
       - curl -L -o postgresql-42.7.2.jar https://jdbc.postgresql.org/download/postgresql-42.7.2.jar
-      - ls -R liquibase
   build:
     commands:
-      - echo Running Liquibase migration...
-      - java -jar liquibase/liquibase-4.28.0/liquibase.jar --classpath=postgresql-42.7.2.jar --defaultsFile=liquibase.properties update
+      - echo "Running Liquibase migration..."
+      - liquibase/liquibase --classpath=postgresql-42.7.2.jar --defaultsFile=liquibase.properties update
