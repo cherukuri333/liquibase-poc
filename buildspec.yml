@@ -8,9 +8,9 @@ phases:
       - echo Downloading Liquibase and PostgreSQL driver...
       - curl -L -o liquibase.zip https://github.com/liquibase/liquibase/releases/download/v4.28.0/liquibase-4.28.0.zip
       - unzip liquibase.zip -d liquibase
-      - ls -R liquibase        # 👈 Show contents of the directory
       - curl -L -o postgresql-42.7.2.jar https://jdbc.postgresql.org/download/postgresql-42.7.2.jar
+      - ls -R liquibase
   build:
     commands:
       - echo Running Liquibase migration...
-      - java -jar liquibase/liquibase.jar --classpath=postgresql-42.7.2.jar --defaultsFile=liquibase.properties update
+      - java -jar liquibase/liquibase-4.28.0/liquibase.jar --classpath=postgresql-42.7.2.jar --defaultsFile=liquibase.properties update
