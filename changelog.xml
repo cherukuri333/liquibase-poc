@@ -53,7 +53,7 @@
         <insert tableName="vernova">
             <column name="project_members" value="Alice,Bob"/>
             <column name="organisation" value="Vernova Org"/>
-            <column name="location" value="hyd"/>
+            <column name="location" value="blr"/>
         </insert>
     </changeSet>
 
