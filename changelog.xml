@@ -23,6 +23,7 @@
         <createTable tableName="vernova">
             <column name="project_members" type="varchar(255)"/>
             <column name="organisation" type="varchar(255)"/>
+            <column name="location" type="varchar(255)"/>
         </createTable>
     </changeSet>
 
