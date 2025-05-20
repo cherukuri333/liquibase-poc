@@ -37,4 +37,24 @@
         <dropColumn tableName="vernova" columnName="department"/>
     </changeSet>
 
+    <!-- New changeset to insert values -->
+    <changeSet id="6" author="saiteja">
+        <!-- Insert into demo_table_sai -->
+        <insert tableName="demo_table_sai">
+            <column name="name" value="John Doe"/>
+            <column name="address" value="123 Main St"/>
+        </insert>
+        <insert tableName="demo_table_sai">
+            <column name="name" value="Jane Smith"/>
+            <column name="address" value="456 Oak Ave"/>
+        </insert>
+
+        <!-- Insert into vernova -->
+        <insert tableName="vernova">
+            <column name="project_members" value="Alice,Bob"/>
+            <column name="organisation" value="Vernova Org"/>
+            <column name="location" value="hyd"/>
+        </insert>
+    </changeSet>
+
 </databaseChangeLog>
