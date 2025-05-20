@@ -35,6 +35,6 @@
 
     <changeSet id="5" author="teja">
         <dropColumn tableName="vernova" columnName="department"/>
-    </changeSet
+    </changeSet>
 
 </databaseChangeLog>
