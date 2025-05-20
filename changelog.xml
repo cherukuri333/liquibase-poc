@@ -27,4 +27,11 @@
         </createTable>
     </changeSet>
 
+    <!-- ✅ NEW CHANGESET (safe for Liquibase) -->
+    <changeSet id="4" author="saiteja">
+        <addColumn tableName="vernova">
+            <column name="department" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+
 </databaseChangeLog>
