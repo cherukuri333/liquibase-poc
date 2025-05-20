@@ -33,7 +33,7 @@
         </addColumn>
     </changeSet>
 
-    <changeSet id="5" author="saiteja">
+    <changeSet id="5" author="teja">
         <dropColumn tableName="vernova" columnName="department"/>
     </changeSet
 
