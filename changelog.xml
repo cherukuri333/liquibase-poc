@@ -53,8 +53,16 @@
         <insert tableName="vernova">
             <column name="project_members" value="Alice,Bob"/>
             <column name="organisation" value="Vernova Org"/>
-            <column name="location" value="blr"/>
+            <column name="location" value="hyd"/>
         </insert>
     </changeSet>
+
+    <changeSet id="7" author="praksh">
+    <update tableName="vernova">
+        <column name="location" value="mumbai"/>
+        <where>location = 'hyd'</where>
+    </update>
+</changeSet>
+
 
 </databaseChangeLog>
