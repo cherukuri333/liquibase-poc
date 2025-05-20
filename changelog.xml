@@ -33,9 +33,4 @@
         </addColumn>
     </changeSet>
 
-    <changeSet id="5" author="saiteja">
-        <dropTable tableName="demo_table_sai"/>
-        <dropTable tableName="vernova"/>
-    </changeSet>
-
 </databaseChangeLog>
