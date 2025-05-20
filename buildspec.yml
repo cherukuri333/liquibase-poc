@@ -15,4 +15,6 @@ phases:
   build:
     commands:
       - echo "Running Liquibase migration..."
-      - /usr/local/bin/liquibase/liquibase --defaultsFile=liquibase.properties update
+#      - /usr/local/bin/liquibase/liquibase --defaultsFile=liquibase.properties update
+      - /usr/local/bin/liquibase/liquibase --defaultsFile=liquibase.properties rollbackCount 1
+
